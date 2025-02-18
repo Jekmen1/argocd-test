@@ -27,9 +27,10 @@ kind: Service
 metadata:
   name: flask-nginx-app
 spec:
-  type: LoadBalancer
+  type: NodePort
   selector:
     app: flask-nginx-app
   ports:
   - port: 5555
     targetPort: 5000
+    nodePort: 30007
